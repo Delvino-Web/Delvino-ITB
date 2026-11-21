@@ -457,3 +457,34 @@ h2, h3 {
   height: 100%;
   object-fit: contain;
 }
+
+/* ==========================================
+   FIX: MEMAKSA BENTUK FOTO PROFIL & SUPPORT JADI BULAT SEMPURNA
+   ========================================== */
+
+.avatar {
+  width: 90px !important;
+  height: 90px !important; /* Paksa tinggi dan lebar sama */
+  border-radius: 50% !important; /* Paksa jadi lingkaran sempurna */
+  border: 4px solid var(--gold) !important;
+  overflow: hidden !important; /* Memotong gambar yang kepanjangan */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+/* Paksa gambar di dalamnya memenuhi lingkaran tanpa merusak proporsi */
+.avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Ini kuncinya: gambar akan dipotong otomatis, tidak ditarik */
+  border-radius: 50% !important;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow);
+}
